@@ -10,8 +10,11 @@ def login(request):
 		user = User()
 		user.email = request.POST['email']
 		user.password = request.POST['password']
-		print(user)
-		return render(request, 'dashboard.html')
+		success =  user.check_email(user.email) and user.check_password(user.password)
+		if success:
+			return render(request, 'dashboard.html')
+		else:
+			return render(request, 'login.html')
 	else:
 		return render(request, 'login.html')
 	

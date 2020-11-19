@@ -7,3 +7,4 @@ class User(models.Model):
 	password = models.CharField(max_length=255)
 	class meta:
 		db_table = "user"
+		fields = ('email', 'password')
