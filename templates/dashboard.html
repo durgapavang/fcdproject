@@ -7,6 +7,8 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">  
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 </head>  
 <body>  
  <div class="container">
@@ -23,17 +25,14 @@
 			<div class="card-body">
 				<form method="POST" id="dashboard" action="dashboard">
 					{% csrf_token %}
-					<div class="input-group form-group">
-					  <div class="input-group-prepend">
-					    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-					  </div>
+					<div class="form-group">
 					  <div class="custom-file">
-					    <input type="file" class="custom-file-input" id="inputGroupFile01"
-					      aria-describedby="inputGroupFileAddon01">
+					    <input type="file" class="custom-file-input" id="json_file"
+					      aria-describedby="inputGroupFileAddon01" name="json_file" accept="application/json">
 					    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 					  </div>
 					</div>
-					 <input type="submit" id="savelogin" name="savelogin" class="btn btn-primary" value="Submit"/>
+					 <input type="submit" id="savejson" name="savejson" class="btn btn-primary" value="Submit"/>
 				</form>
 			</div>
 		</div>
