@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import mysql.connector
 from operator import itemgetter 
-from .models import User
+# from .models import User
 
 # Create your views here.
 def login(request):
